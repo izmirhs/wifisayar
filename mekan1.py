@@ -22,8 +22,8 @@ except:
     print("Unexpected error:", sys.exc_info()[0])
     sys.exit(0)
 
-print "izmir hackerspace mekan uygulaması"
-print('Scanning network for active hosts...')
+print ("izmir hackerspace mekan uygulaması")
+print ('Scanning network for active hosts...')
 
 nm.scan(hosts='192.168.0.0/24', arguments=' -n -sP -PE')
 hosts_list = [(x, nm[x]['status']['state']) for x in nm.all_hosts()]
@@ -35,8 +35,8 @@ hostsCount = len(hosts_list)
 dtnow = arrow.now()
 exceptionsCount = len(exceptions)
 
-print "İstisnalar ({}) dahil {} cihaz bağlı".format(str(exceptionsCount), str(hostsCount))
-print "İstisnalar ({}) hariç {} cihaz bağlı".format(str(exceptionsCount), str(hostsCount -exceptionsCount))
+print ("İstisnalar ({}) dahil {} cihaz bağlı".format(str(exceptionsCount), str(hostsCount)))
+print ("İstisnalar ({}) hariç {} cihaz bağlı".format(str(exceptionsCount), str(hostsCount -exceptionsCount)))
 
 if (hostsCount - exceptionsCount) < 1:
 	message =  "Kapalı"
