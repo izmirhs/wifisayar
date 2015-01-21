@@ -22,7 +22,7 @@ except:
     print("Unexpected error:", sys.exc_info()[0])
     sys.exit(0)
 
-print ("izmir hackerspace mekan uygulaması")
+print ("izmir hackerspace wifisayar uygulaması")
 print ('Scanning network for active hosts...')
 
 nm.scan(hosts='192.168.0.0/24', arguments=' -n -sP -PE')
@@ -46,6 +46,6 @@ else:
 	print (message)
 
 file = open(htmlFile,'w')
-htmlBody =  message + "<BR/><small>Güncelleme: " + dtnow.format('DD.MM.YYYY HH:mm') +  "</small>" 
+htmlBody =  message + "<BR/><small>Güncelleme: " + dtnow.format('DD.MM.YYYY HH:mm') +  "</small>"
 file.write(htmlBody)
 file.close()
