@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
 12.2014 izmir hackerspace
 """
-
+from __future__ import print_function
 import sys
 import nmap
 import arrow
@@ -40,10 +40,10 @@ print "İstisnalar ({}) hariç {} cihaz bağlı".format(str(exceptionsCount), st
 
 if (hostsCount - exceptionsCount) < 1:
 	message =  "Kapalı"
-	print message
+	print (message)
 else:
 	message =  "Açık, {} cihaz bağlı".format(str(hostsCount-exceptionsCount))
-	print message
+	print (message)
 
 file = open(htmlFile,'w')
 htmlBody =  message + "<BR/><small>Güncelleme: " + dtnow.format('DD.MM.YYYY HH:mm') +  "</small>" 
